@@ -1,11 +1,11 @@
 :root {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --bg-color: #f8fafc;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --panel-bg: #ffffff;
-    --border-color: #e2e8f0;
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --bg-color: #0f172a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --panel-bg: #1e293b;
+    --border-color: #334155;
 }
 
 * {
@@ -65,13 +65,13 @@ p {
     border-radius: 8px;
     padding: 4rem 2rem;
     transition: all 0.2s ease;
-    background: #fdfdfd;
+    background: #0f172a;
     position: relative;
 }
 
 .upload-area.dragover {
     border-color: var(--primary);
-    background: #eff6ff;
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .upload-content svg {
@@ -118,7 +118,7 @@ button {
 }
 
 .btn-secondary:hover {
-    background-color: #f1f5f9;
+    background-color: #334155;
 }
 
 /* Loading State */
@@ -192,14 +192,14 @@ button {
 
 /* Checkered background for transparency */
 .transparent-bg {
-    background-image:
-        linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
-        linear-gradient(135deg, #e2e8f0 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
-        linear-gradient(135deg, transparent 75%, #e2e8f0 75%);
-    background-size: 16px 16px;
+    background-image: 
+      linear-gradient(45deg, #334155 25%, transparent 25%), 
+      linear-gradient(135deg, #334155 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #334155 75%),
+      linear-gradient(135deg, transparent 75%, #334155 75%);
+    background-size: 16px 16px; 
     background-position: 0 0, 8px 0, 8px -8px, 0px 8px;
-    background-color: #f8fafc;
+    background-color: #1e293b;
     border-radius: 4px;
     display: flex;
     justify-content: center;
