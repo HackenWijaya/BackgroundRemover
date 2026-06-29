@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Background Remover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="main-panel">
+            <header>
+                <h1>Background Remover</h1>
+                <p>Upload an image to instantly remove its background.</p>
+            </header>
+
+            <main>
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-content" id="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h3>Drag & Drop your image here</h3>
+                        <p>or</p>
+                        <button class="btn-primary" onclick="document.getElementById('file-input').click()">
+                            Browse Files
+                        </button>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                    
+                    <!-- Loading state -->
+                    <div class="loading-state hidden" id="loading-state">
+                        <div class="spinner"></div>
+                        <p>Processing image...</p>
+                    </div>
+                </div>
+
+                <div class="result-area hidden" id="result-area">
+                    <div class="image-comparison">
+                        <div class="image-container">
+                            <h4>Original</h4>
+                            <img id="original-image" src="" alt="Original">
+                        </div>
+                        <div class="image-container">
+                            <h4>Result</h4>
+                            <div class="transparent-bg">
+                                <img id="result-image" src="" alt="Removed Background">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-secondary" id="btn-reset">Try Another</button>
+                        <button class="btn-primary" id="btn-download">Download High-Res</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
