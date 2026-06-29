@@ -8,7 +8,7 @@ from PIL import Image # Library untuk pemrosesan gambar (opsional, untuk manipul
 
 # 1. Inisialisasi Aplikasi
 # Membuat instance aplikasi FastAPI. Ini adalah fondasi dari server web kita.
-app = FastAPI(title="BgRemove API by Hacken Wijaya")
+app = FastAPI(title="Background Remover API")
 
 # 2. Pengaturan Keamanan (CORS)
 # Mengizinkan frontend (antarmuka web) untuk berkomunikasi dengan backend API ini.
