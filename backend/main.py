@@ -21,6 +21,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# 2.5 Menyiapkan Model Kecerdasan Buatan (AI) secara Global
+# Memuat file model arsitektur U^2-Net ("u2net.onnx") ke dalam memori komputer saat server pertama kali menyala.
+# Ini memastikan bahwa proses penghapusan menggunakan neural network U^2-Net dan mencegah server loading lambat (timeout) saat di-deploy.
+print("Loading model U^2-Net...")
+model_session = new_session("u2net")
+print("Model siap!")
+
 # 3. Mendefinisikan Rute API (Endpoint)
 # Membuat endpoint POST di URL '/api/remove-bg'. Saat fungsi JavaScript melakukan fetch, data dikirim ke sini.
 @app.post("/api/remove-bg")
@@ -29,11 +36,7 @@ async def remove_background(image: UploadFile = File(...)):
     # Menunggu dan membaca seluruh data byte dari gambar yang diunggah oleh pengguna
     contents = await image.read()
     
-    # 3.2 Menyiapkan Model Kecerdasan Buatan (AI)
-    # Memuat file model arsitektur U^2-Net ("u2net.onnx") ke dalam memori komputer.
-    # Ini memastikan secara spesifik bahwa proses penghapusan menggunakan neural network U^2-Net.
-    model_session = new_session("u2net")
-    
+
     # 3.3 Pemrosesan Gambar (Inferensi AI)
     # Gambar mentah (contents) dimasukkan ke dalam jaringan U^2-Net.
     # Model akan memprediksi saliency map, menghapus latar belakang, dan mengembalikan hasilnya (byte gambar).
