@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background Remover</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
+
 <body>
     <div class="app-container">
         <div class="main-panel">
@@ -18,7 +20,8 @@
             <main>
                 <div class="upload-area" id="drop-zone">
                     <div class="upload-content" id="upload-content">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="17 8 12 3 7 8"></polyline>
                             <line x1="12" y1="3" x2="12" y2="15"></line>
@@ -30,7 +33,7 @@
                         </button>
                         <input type="file" id="file-input" accept="image/*" hidden>
                     </div>
-                    
+
                     <!-- Loading state -->
                     <div class="loading-state hidden" id="loading-state">
                         <div class="spinner"></div>
@@ -61,4 +64,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
